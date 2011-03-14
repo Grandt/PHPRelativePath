@@ -12,13 +12,13 @@
  * License: GNU LGPL, Attribution required for commercial implementations, requested for everything else.
  *
  * @author A. Grandt
- * @copyright A. Grandt 2009-2011
+ * @copyright A. Grandt 2011
  * @license GNU LGPL, Attribution required for commercial implementations, requested for everything else.
  * @link http://www.phpclasses.org/package/6844
- * @version 1.00
+ * @version 1.01
  */
 class RelativePath {
-	const VERSION = 1.00;
+	const VERSION = 1.01;
 
 	/**
 	 * Join $file to $dir path, and clean up any excess slashes.
@@ -27,6 +27,9 @@ class RelativePath {
 	 * @param String $file
 	 */
 	public static function pathJoin($dir, $file) {
+		if (empty($dir) || empty($file)) {
+			return self::getRelativePath($dir . $file);
+		}
 		return self::getRelativePath($dir . '/' . $file);
 	}
 
@@ -72,9 +75,9 @@ class RelativePath {
 		}
 
 		if (empty($root)) {
-			return str_repeat("../", $sub) . implode("/", array_slice($newDirs, 0, $offset));
-		} else {
-			return $root . implode("/", array_slice($newDirs, 0, $offset));
-		}
+			$root = str_repeat("../", $sub);
+		} 
+		return $root . implode("/", array_slice($newDirs, 0, $offset));
 	}
 }
+?>
