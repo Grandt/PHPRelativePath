@@ -11,8 +11,8 @@
  * 
  * License: GNU LGPL, Attribution required for commercial implementations, requested for everything else.
  *
- * @author A. Grandt
- * @copyright A. Grandt 2011
+ * @author A. Grandt <php@grandt.com>
+ * @copyright 2011 A. Grandt
  * @license GNU LGPL, Attribution required for commercial implementations, requested for everything else.
  * @link http://www.phpclasses.org/package/6844
  * @version 1.01
@@ -38,7 +38,7 @@ class RelativePath {
 	 * If the path starts with a "/", it is deemed an absolute path and any /../ in the beginning is stripped off.
 	 * The returned path will not end in a "/".
 	 *
-	 * @param String $relPath The path to clean up
+	 * @param String $path The path to clean up
 	 * @return String the clean path
 	 */
 	public static function getRelativePath($path) {
@@ -59,7 +59,7 @@ class RelativePath {
 		} 
 
 		$newDirs = array();
-		foreach($dirs as $dir) {
+		foreach ($dirs as $dir) {
 			if ($dir !== "..") {
 				$subOffset--;	
 				$newDirs[++$offset] = $dir;

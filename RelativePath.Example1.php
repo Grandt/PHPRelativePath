@@ -1,6 +1,6 @@
 <?php
 echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
-include_once 'RelativePath.php';
+require_once 'RelativePath.php';
 $docRoot = $_SERVER["DOCUMENT_ROOT"] . "/";
 
 if (!empty($_POST['path'])) {
@@ -18,13 +18,21 @@ if (!empty($_POST['path'])) {
 	"/media/Projects/www/test/images/../../home/../../../John Doe/work/site/test.2/../../www/Project.1");
 }
 
+/**
+ * 
+ * Time execution time for a function
+ *
+ * @param unknown_type $function
+ * @param unknown_type $title
+ * @param unknown_type $iterations
+ */
 function execTime($function, $title="", $iterations = 100000) {
-	list($usec, $sec) = explode(" ",microtime());
+	list($usec, $sec) = explode(" ", microtime());
 	$t1 = ($sec+$usec) * 1000;
 	for ($i = 0 ; $i < $iterations ; $i++) {
 		$function();
 	}
-	list($usec, $sec) = explode(" ",microtime());
+	list($usec, $sec) = explode(" ", microtime());
 	$t2 = ($sec+$usec) * 1000;
 	$t2 = $t2 - $t1;
 	if (!empty($title)) {
