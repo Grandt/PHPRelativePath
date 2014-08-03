@@ -4,6 +4,7 @@
     "type": "library",
     "description": "A class for cleaning up/collapsing relative paths. Like real_path, but without the need for the path to exist on the filesystem.",
     "keywords": ["file path"],
+    "homepage": "https://github.com/Grandt/PHPRelativePath",
     "license": "LGPL-2.1",
     "authors": [
         {
@@ -14,6 +15,13 @@
     ],
     "require": {
         "php": ">=5.0"
+    },
+    "repositories": {
+        "Github": {
+            "vcs": {
+                "url": "git://github.com/Grandt/PHPRelativePath.git"
+            }
+        }
     },
     "autoload": {
         "classmap": [
