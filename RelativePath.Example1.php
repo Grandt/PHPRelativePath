@@ -15,7 +15,8 @@ if (!empty($_POST['path'])) {
 	"../../../home/./John Doe/work/site/test/../../www/Project.1/" . "/../Project.2/index.html",
 	"./././../../../../../../../../../home/./John Doe/work/site/test/../../www/Project.1" . "/" . "../Project.2/index.html",
 	"../../home/../../../John Doe/work/site/test/../../www/Project.1" . "/" . "../Project.2/index.html/../",
-	"/media/Projects/www/test/images/../../home/../../../John Doe/work/site/test.2/../../www/Project.1");
+	"/media/Projects/www/test/images/../../home/../../../John Doe/work/site/test.2/../../www/Project.1",
+	"c:\\Windows\\..\\Temp\\tempfile.txt");
 }
 
 /**

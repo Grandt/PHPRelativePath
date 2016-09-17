@@ -57,7 +57,7 @@ class RelativePath {
         if (empty($dirs[0])) {
             $root = "/";
             $dirs = array_splice($dirs, 1);
-        } else if (preg_match("#[A-Za-z]:#", $dirs[0])) {
+        } else if (preg_match("#^[A-Za-z]:$#", $dirs[0])) {
             $root = strtoupper($dirs[0]) . "/";
             $dirs = array_splice($dirs, 1);
         } 
