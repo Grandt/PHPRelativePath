@@ -82,12 +82,13 @@ print "<p>docRoot: $docRoot</p>\n";
 <form method="post">
 <p>Path:<br />
 <input type="text" size="120" name="path"
-	value="<?php echo stripslashes($_POST['path']); ?>" /></p>
+	value="<?php echo htmlspecialchars(stripslashes($_POST['path']), ENT_QUOTES); ?>" /></p>
 <p><input type="submit" /></p>
 </form>
 <dl>
 <?php
 foreach ($paths as $path) {
+    $path = htmlspecialchars($path, ENT_QUOTES);
 	echo "<dt><pre>Path '$path' becomes:</pre></dt>\n";
 	echo "<dd><pre>";
 	echo "'" . RelativePath::getRelativePath($path) . "'\n";
