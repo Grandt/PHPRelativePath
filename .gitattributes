@@ -20,3 +20,10 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/composer.phar export-ignore
+/RelativePath.Example1.php export-ignore
+/Tests export-ignore
+/phpunit.xml.dist export-ignore
